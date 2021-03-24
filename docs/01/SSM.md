@@ -15,7 +15,7 @@
 在软件业，AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同时提高了开发的效率。
 
 
-## Spring框架
+## Spring
 
 Spring是一个开源框架。
 
@@ -26,6 +26,30 @@ Spring的用途不仅仅限于服务器端的开发，从简单性、可测试�
 ## SpringMVC
 
 是一种web框架。
+
+## SpringMVC运行流程
+
+![img](https://images2015.cnblogs.com/blog/249993/201612/249993-20161212142542042-2117679195.jpg)1、 用户发送请求至前端控制器DispatcherServlet。
+
+2、 DispatcherServlet收到请求调用HandlerMapping处理器映射器。
+
+3、 处理器映射器找到具体的处理器(可以根据xml配置、注解进行查找)，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet。
+
+4、 DispatcherServlet调用HandlerAdapter处理器适配器。
+
+5、 HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)。
+
+6、 Controller执行完成返回ModelAndView。
+
+7、 HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet。
+
+8、 DispatcherServlet将ModelAndView传给ViewReslover视图解析器。
+
+9、 ViewReslover解析后返回具体View。
+
+10、DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中）。
+
+11、 DispatcherServlet响应用户。
 
 ## MyBatis
 
